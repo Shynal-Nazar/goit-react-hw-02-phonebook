@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Title } from './App.styled';
 import PhonebookSection from './phonebook/Phonebook';
+import ContactsSection from './contacts/Contacts';
 
 export class App extends Component {
   state = {
@@ -13,6 +14,7 @@ export class App extends Component {
       <Container>
         <Title>PHONEBOOK APP</Title>
         <PhonebookSection />
+        <ContactsSection />
       </Container>
     );
   }
