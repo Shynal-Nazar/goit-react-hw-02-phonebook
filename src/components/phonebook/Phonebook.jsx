@@ -24,7 +24,7 @@ class PhonebookSectionp extends Component {
         contact => contact.name.toLowerCase() === e.target.value.toLowerCase()
       );
       if (contactInState) {
-        alert(`${contactInState.name} is already in contacts!`);
+        alert(`${e.currentTarget.value} is already in contacts!`);
       }
     }
     this.setState({ [type]: e.target.value });
@@ -67,7 +67,7 @@ class PhonebookSectionp extends Component {
           <PhoneLabel>
             Number
             <PhoneInput
-              type="text"
+              type="tel"
               name="number"
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
