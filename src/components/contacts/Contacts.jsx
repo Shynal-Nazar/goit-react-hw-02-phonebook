@@ -6,7 +6,7 @@ import {
   ContactsItem,
   ContactsItemName,
   ContactsBtn,
-} from './Contacts.styled';
+} from './Contact.styled';
 
 const ContactListItem = ({ name, number, onClickRemove }) => {
   return (
