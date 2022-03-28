@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FilterSection, FilterName, FilterInput } from './Filter.styled';
 
 export default function Filter({ value, onChangeFilter }) {
   return (
-    <div>
-      <p>Find contacts by name</p>
-      <input
+    <FilterSection>
+      <FilterName>Find contacts by name</FilterName>
+      <FilterInput
         type="text"
         value={value}
         onChange={evt => onChangeFilter(evt.target.value)}
       />
-    </div>
+    </FilterSection>
   );
 }
 

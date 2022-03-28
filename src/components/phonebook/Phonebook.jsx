@@ -20,7 +20,7 @@ class PhonebookSectionp extends Component {
   handleChange = (type, e) => {
     const { contacts } = this.props;
     if (type === 'name') {
-      const contactInState = contacts.find(
+      const contactInState = contacts.some(
         contact => contact.name.toLowerCase() === e.target.value.toLowerCase()
       );
       if (contactInState) {
