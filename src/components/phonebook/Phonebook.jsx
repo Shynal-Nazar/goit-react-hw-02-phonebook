@@ -24,7 +24,7 @@ class PhonebookSectionp extends Component {
         contact => contact.name.toLowerCase() === e.target.value.toLowerCase()
       );
       if (contactInState) {
-        alert(`${e.currentTarget.value} is already in contacts!`);
+        alert(`${e.target.value} is already in contacts!`);
       }
     }
     this.setState({ [type]: e.target.value });
@@ -34,10 +34,10 @@ class PhonebookSectionp extends Component {
     evt.preventDefault();
     const { name, number } = this.state;
     const { contacts, onAddContact } = this.props;
-    const contactInState = contacts.find(
+    const contactInState = contacts.some(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
-    contactInState && alert(`${contactInState.name} is already in contacts!`);
+    contactInState && alert(`${name} is already in contacts!`);
     if (!contactInState && name && number) {
       onAddContact(name, number);
       this.setState(INITIAL_STATE);
