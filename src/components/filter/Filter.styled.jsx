@@ -9,7 +9,7 @@ export const FilterSection = styled.div`
   width: 400px;
   border: 2px solid #9e9e9e;
   border-radius: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding: 10px;
   box-shadow: 0px 4px 4px hsla(0, 0%, 0%, 0.15);
 `;
