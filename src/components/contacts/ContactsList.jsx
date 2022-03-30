@@ -1,25 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  ContactsSection,
-  ContactsList,
-  ContactsItem,
-  ContactsItemName,
-  ContactsBtn,
-} from './Contact.styled';
-
-const ContactListItem = ({ name, number, onClickRemove }) => {
-  return (
-    <ContactsItem>
-      <ContactsItemName>
-        {name}: {number}
-      </ContactsItemName>
-      <ContactsBtn type="button" onClick={onClickRemove}>
-        Delete
-      </ContactsBtn>
-    </ContactsItem>
-  );
-};
+import ContactListItem from './ContactsItem';
+import { ContactsSection, ContactsList } from './Contact.styled';
 
 const ContactList = ({ filteredContacts, onRemove }) => {
   return (
@@ -41,12 +23,6 @@ const ContactList = ({ filteredContacts, onRemove }) => {
 };
 
 export default ContactList;
-
-ContactListItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
-  onClickRemove: PropTypes.func.isRequired,
-};
 
 ContactList.propTypes = {
   filteredContacts: PropTypes.arrayOf(

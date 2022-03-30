@@ -18,36 +18,21 @@ class PhonebookSectionp extends Component {
   state = INITIAL_STATE;
 
   handleChange = (type, e) => {
-    const { contacts } = this.props;
-    if (type === 'name') {
-      const contactInState = contacts.some(
-        contact => contact.name.toLowerCase() === e.target.value.toLowerCase()
-      );
-      if (contactInState) {
-        alert(`${e.target.value} is already in contacts!`);
-      }
-    }
     this.setState({ [type]: e.target.value });
   };
 
   handleSubmit = evt => {
     evt.preventDefault();
     const { name, number } = this.state;
-    const { contacts, onAddContact } = this.props;
-    const contactInState = contacts.some(
-      contact => contact.name.toLowerCase() === name.toLowerCase()
-    );
-    contactInState && alert(`${name} is already in contacts!`);
-    if (!contactInState && name && number) {
+    const { onAddContact } = this.props;
+    if (name && number) {
       onAddContact(name, number);
       this.setState(INITIAL_STATE);
-      return;
     }
   };
 
   render() {
     const { name, number } = this.state;
-
     return (
       <PhoneSection>
         <PhoneSectionName>Phonebook</PhoneSectionName>
